@@ -1,46 +1,8 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Link } from "@tanstack/react-router"
+import { projects } from "@/lib/mock"
 
-const projects = [
-  {
-    id: 1,
-    title: "Casa Moderna en Kieveskoe",
-    description:
-      "Diseño contemporáneo con espacios abiertos y luz natural que maximiza la conexión con el entorno exterior.",
-    image: "/modern-minimalist-living-room-with-neutral-tones.png",
-    number: "01",
-  },
-  {
-    id: 2,
-    title: "Residencia Urbana Central",
-    description:
-      "Arquitectura urbana con elementos industriales refinados que crean un ambiente sofisticado y moderno.",
-    image: "/urban-residential-interior-with-industrial-element.png",
-    number: "02",
-  },
-  {
-    id: 3,
-    title: "Villa Mediterránea",
-    description: "Elegancia clásica con toques modernos y vistas panorámicas que integran el paisaje natural.",
-    image: "/mediterranean-villa-interior-with-panoramic-views.png",
-    number: "03",
-  },
-  {
-    id: 4,
-    title: "Loft Contemporáneo",
-    description: "Espacios amplios con diseño minimalista y funcional que optimiza cada metro cuadrado.",
-    image: "/contemporary-loft-with-minimalist-design.png",
-    number: "04",
-  },
-  {
-    id: 5,
-    title: "Casa de Campo Moderna",
-    description: "Integración perfecta entre naturaleza y arquitectura contemporánea en un entorno rural.",
-    image: "/modern-country-house-interior-with-natural-integra.png",
-    number: "05",
-  },
-]
 
 export function ProjectCarousel() {
   const [currentProject, setCurrentProject] = useState(0)
@@ -63,27 +25,27 @@ export function ProjectCarousel() {
 
   return (
     <section className="py-20 bg-primary/10">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center text-center mb-16">
-          <p className="text-muted-foreground text-sm uppercase tracking-wider ">Nuestros Proyectos</p>
+      <div className="container px-4 mx-auto sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center mb-16 text-center">
+          <p className="text-sm tracking-wider uppercase text-muted-foreground ">Nuestros Proyectos</p>
           <div className="h-[1px] w-36 bg-muted-foreground mt-3 "></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto">
+        <div className="relative mx-auto max-w-7xl">
           <div className="grid grid-cols-12 gap-4 items-center min-h-[600px]">
             {/* Left Preview - Previous Project */}
-            <div className="col-span-2 flex flex-col items-center cursor-pointer group" onClick={prevProject}>
-              <div className="text-6xl font-bold text-muted-foreground/40 mb-4 group-hover:text-primary/60 transition-colors">
+            <div className="flex flex-col items-center col-span-2 cursor-pointer group" onClick={prevProject}>
+              <div className="mb-4 text-6xl font-bold transition-colors text-muted-foreground/40 group-hover:text-primary/60">
                 {projects[getPrevProject()].number}
               </div>
-              <div className="w-24 h-24 rounded-lg overflow-hidden mb-2 group-hover:scale-105 transition-transform">
+              <div className="w-24 h-24 mb-2 overflow-hidden transition-transform rounded-lg group-hover:scale-105">
                 <img
                   src={projects[getPrevProject()].image || "/placeholder.svg"}
                   alt={projects[getPrevProject()].title}
-                  className="w-full h-full object-cover"
+                  className="object-cover w-full h-full"
                 />
               </div>
-              <p className="text-xs text-muted-foreground text-center leading-tight">
+              <p className="text-xs leading-tight text-center text-muted-foreground">
                 {projects[getPrevProject()].title}
               </p>
             </div>
@@ -96,27 +58,30 @@ export function ProjectCarousel() {
                     <img
                       src={projects[currentProject].image || "/placeholder.svg"}
                       alt={projects[currentProject].title}
-                      className="w-full h-full object-cover"
+                      className="object-cover w-full h-full"
                     />
                     <div className="absolute top-6 left-6">
-                      <span className="text-8xl font-bold text-white/20">{projects[currentProject].number}</span>
+                      <span className="font-bold text-8xl text-white/20">{projects[currentProject].number}</span>
                     </div>
                   </div>
 
                   <div className="p-8">
-                    <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
+                    <h3 className="mb-4 text-3xl font-bold text-center md:text-4xl text-foreground">
                       {projects[currentProject].title}
                     </h3>
-                    <p className="text-muted-foreground text-lg mb-6 leading-relaxed text-center max-w-2xl mx-auto">
+                    <p className="max-w-2xl mx-auto mb-6 text-lg leading-relaxed text-center text-muted-foreground">
                       {projects[currentProject].description}
                     </p>
-                    <p className="text-sm text-muted-foreground text-center mb-6">Diseño por RGB Studio</p>
+                    <p className="mb-6 text-sm text-center text-muted-foreground">Diseño por RGB Studio</p>
 
                     <div className="flex justify-center">
                       <Button className="bg-primary hover:bg-primary/90">
-                        <Link to={`/proyectos/$proyectoId`} params={{ proyectoId: projects[currentProject].id.toString() }}>
+                        <Link
+                          to={`/proyectos/$proyectoId`}
+                          params={{ proyectoId: projects[currentProject].id }}
+                          resetScroll={true}
+                        >
                           Ver Detalles del Proyecto
-                        
                         </Link>
                       </Button>
                     </div>
@@ -126,25 +91,25 @@ export function ProjectCarousel() {
             </div>
 
             {/* Right Preview - Next Project */}
-            <div className="col-span-2 flex flex-col items-center cursor-pointer group" onClick={nextProject}>
-              <div className="text-6xl font-bold text-muted-foreground/40 mb-4 group-hover:text-primary/60 transition-colors">
+            <div className="flex flex-col items-center col-span-2 cursor-pointer group" onClick={nextProject}>
+              <div className="mb-4 text-6xl font-bold transition-colors text-muted-foreground/40 group-hover:text-primary/60">
                 {projects[getNextProject()].number}
               </div>
-              <div className="w-24 h-24 rounded-lg overflow-hidden mb-2 group-hover:scale-105 transition-transform">
+              <div className="w-24 h-24 mb-2 overflow-hidden transition-transform rounded-lg group-hover:scale-105">
                 <img
                   src={projects[getNextProject()].image || "/placeholder.svg"}
                   alt={projects[getNextProject()].title}
-                  className="w-full h-full object-cover"
+                  className="object-cover w-full h-full"
                 />
               </div>
-              <p className="text-xs text-muted-foreground text-center leading-tight">
+              <p className="text-xs leading-tight text-center text-muted-foreground">
                 {projects[getNextProject()].title}
               </p>
             </div>
           </div>
 
           {/* Navigation dots */}
-          <div className="flex justify-center mt-8 gap-2">
+          <div className="flex justify-center gap-2 mt-8">
             {projects.map((_, index) => (
               <button
                 key={index}

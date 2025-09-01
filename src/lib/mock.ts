@@ -8,6 +8,7 @@ export interface Project {
   location: string
   area: string
   type: string
+  number: string
 }
 
 
@@ -23,6 +24,7 @@ export const projects: Project[] = [
     location: "Kieveskoe, Ucrania",
     area: "280 m²",
     type: "Residencial",
+    number: "01",
   },
   {
     id: "residencia-urbana-central",
@@ -35,6 +37,7 @@ export const projects: Project[] = [
     location: "Centro, Madrid",
     area: "320 m²",
     type: "Residencial",
+    number: "02",
   },
   {
     id: "villa-mediterranea",
@@ -46,6 +49,7 @@ export const projects: Project[] = [
     location: "Costa Brava, España",
     area: "450 m²",
     type: "Residencial",
+    number: "03",
   },
   {
     id: "loft-contemporaneo",
@@ -58,6 +62,7 @@ export const projects: Project[] = [
     location: "Barcelona, España",
     area: "180 m²",
     type: "Residencial",
+    number: "04",
   },
   {
     id: "casa-campo-moderna",
@@ -70,6 +75,7 @@ export const projects: Project[] = [
     location: "Segovia, España",
     area: "380 m²",
     type: "Residencial",
+    number: "05",
   },
 ]
 
