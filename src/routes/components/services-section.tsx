@@ -36,28 +36,28 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="servicios" className="py-20 bg-background max-w-7xl w-full mx-auto">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <p className="text-muted-foreground text-sm uppercase tracking-wider mb-4">Lo Que Hacemos</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+    <section id="servicios" className="w-full min-h-screen py-20 mx-auto bg-background max-w-7xl">
+      <div className="container px-4 mx-auto sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <p className="mb-4 text-sm tracking-wider uppercase text-muted-foreground">Lo Que Hacemos</p>
+          <h2 className="mb-6 text-4xl font-bold md:text-5xl text-foreground">
             Estamos Aquí Para Crear
             <br />
             <span className="text-primary">Tu Diseño Arquitectónico Ideal</span>
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 bg-card hover:bg-primary-foreground hover:text-white">
+            <Card key={index} className="transition-all duration-300 group hover:shadow-lg bg-card hover:bg-primary-foreground hover:text-white">
               <CardContent className="p-8">
                 <div className="mb-6">
-                  <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <service.icon className="h-8 w-8 text-primary" />
+                  <div className="flex items-center justify-center w-16 h-16 transition-colors rounded-lg bg-primary/10 group-hover:bg-primary/20">
+                    <service.icon className="w-8 h-8 text-primary" />
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-muted transition-colors select-none">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed group-hover:text-muted transition-colors select-none">{service.description}</p>
+                <h3 className="mb-4 text-xl font-bold transition-colors select-none text-foreground group-hover:text-muted">{service.title}</h3>
+                <p className="leading-relaxed transition-colors select-none text-muted-foreground group-hover:text-muted">{service.description}</p>
               </CardContent>
             </Card>
           ))}
