@@ -2,6 +2,7 @@ import { motion, type Transition } from "framer-motion";
 import { useState } from "react";
 import AnimatedTitle from "./animated-title";
 import AnimatedNumber from "./animated-number";
+import ProjectImageCard from "./animated-proyection";
 
 const transition: Transition = {
   type: "tween",
@@ -16,6 +17,7 @@ const items = [
     scale: 0,
     img: "/modern-country-house-interior-with-natural-integra.png",
     title: "Casa de Campo Moderna",
+    slug: "casa-de-campo-moderna",
   },
   {
     id: 1,
@@ -24,6 +26,7 @@ const items = [
     scale: 1,
     img: "/contemporary-loft-with-minimalist-design.png",
     title: "Casa Moderna en Kieveskoe",
+    slug: "casa-moderna-en-kieveskoe",
   },
   {
     id: 2,
@@ -32,6 +35,7 @@ const items = [
     scale: 2,
     img: "/urban-residential-interior-with-industrial-element.png",
     title: "Residencia Urbana Central",
+    slug: "residencia-urbana-central",
   },
   {
     id: 3,
@@ -40,6 +44,7 @@ const items = [
     scale: 1,
     img: "/mediterranean-villa-interior-with-panoramic-views.png",
     title: "Villa Mediterránea",
+    slug: "villa-mediterranea",
   },
   {
     id: 4,
@@ -48,6 +53,7 @@ const items = [
     scale: 0,
     img: "/modern-minimalist-living-room-with-neutral-tones.png",
     title: "Loft Contemporáneo",
+    slug: "loft-contemporaneo",
   },
 ];
 
@@ -88,14 +94,29 @@ function Carousel() {
                 visibility: isHidden ? "hidden" : "visible",
               }}
             >
-              
-              <img
-                src={item.img}
-                alt={`Image ${item.id}`}
-                className="object-cover h-full mx-auto w-44"
-              />
+              {currentIndex == item.index ? (
+                <div className="flex justify-center w-full h-full ">
+                  <ProjectImageCard slug={item.slug} img={item.img}/>
 
-              <AnimatedNumber value={currentIndex != item.index ? (item.id == 0 ? "05" : "0" + item.id) : ""} trigger={triggerAnimation} />
+                </div>
+              ) : (
+                <img
+                  src={item.img}
+                  alt={`Image ${item.id}`}
+                  className="object-cover h-full mx-auto w-44"
+                />
+              )}
+
+              <AnimatedNumber
+                value={
+                  currentIndex != item.index
+                    ? item.id == 0
+                      ? "05"
+                      : "0" + item.id
+                    : ""
+                }
+                trigger={triggerAnimation}
+              />
 
               <AnimatedTitle
                 title={

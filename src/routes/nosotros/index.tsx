@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import AnimatedTitle from "../components/animated-title";
 import Header from "../components/header";
 import { Footer } from "../components/footer";
+import ProjectImageCard from "../components/animated-proyection";
 
 export const Route = createFileRoute("/nosotros/")({
   component: RouteComponent,
@@ -56,6 +57,10 @@ function RouteComponent() {
       <Header />
       <div className="flex flex-col items-center justify-center h-screen gap-8 p-20 bg-gray-100">
         <AnimatedTitle title={items[0].title} trigger={1} />
+
+        <div>
+          <ProjectImageCard slug="casa-de-campo-moderna" img={items[0].img} className="w-44"/>
+        </div>
       </div>
       <Footer />
     </main>
