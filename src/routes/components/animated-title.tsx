@@ -30,20 +30,24 @@ const AnimatedTitle = ({
   title,
   trigger,
   className,
+  firstLineWords = 2,
+  secondLineWords = 2,
 }: {
   title: string;
   trigger: Key;
   className?: string;
+  firstLineWords?: number;
+  secondLineWords?: number;
 }) => {
   const words = title.split(" ");
-  const firstLine = words.slice(0, 2).join(" ");
-  const secondLine = words.slice(2).join(" ");
+  const firstLine = words.slice(0, firstLineWords).join(" ");
+  const secondLine = words.slice(secondLineWords).join(" ");
 
   return (
     <motion.div
       key={trigger} 
       className={cn(
-        "flex flex-col items-center overflow-hidden text-xl font-bold text-center",
+        "flex flex-col items-center overflow-hidden text-xl font-semibold text-center",
         className
       )}
       variants={containerVariants}

@@ -1,4 +1,4 @@
-import { getProjectById, projects } from '@/lib/mock'
+import { getProjectById, projects } from '@/lib/projects'
 import Header from '@/routes/components/header'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
@@ -15,7 +15,7 @@ function RouteComponent() {
 
   if (!project) return
 
-  const currentIndex = projects.findIndex((p) => p.id === proyectoId)
+  const currentIndex = projects.findIndex((p) => p.slug === proyectoId)
   const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null
   const nextProject = currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null
 
@@ -45,7 +45,7 @@ function RouteComponent() {
             </span>
             <div>
               <h1 className="mb-4 text-4xl font-light md:text-6xl text-foreground text-balance">{project.title}</h1>
-              <p className="mb-6 text-xl text-muted-foreground text-pretty">{project.subtitle}</p>
+              <p className="mb-6 text-xl text-muted-foreground text-pretty">{project.title}</p>
               <div className="grid grid-cols-2 gap-6 text-sm md:grid-cols-4">
                 <div>
                   <span className="block text-muted-foreground">Año</span>
@@ -74,7 +74,7 @@ function RouteComponent() {
             {/* Main Image */}
             <div className="relative aspect-[16/9] overflow-hidden rounded-lg">
               <img
-                src={project.image || "/placeholder.svg"}
+                src={project.imgs[0] || "/placeholder.svg"}
                 alt={project.title}
                 className="object-cover w-full"
               />
@@ -84,14 +84,14 @@ function RouteComponent() {
             <div className="grid gap-8 md:grid-cols-2">
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
                 <img
-                  src={project.image || "/placeholder.svg"}
+                  src={project.imgs[1] || "/placeholder.svg"}
                   alt={`${project.title} - Vista 2`}
                   className="object-cover"
                 />
               </div>
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
                 <img
-                  src={project.image || "/placeholder.svg"}
+                  src={project.imgs[2] || "/placeholder.svg"}
                   alt={`${project.title} - Vista 3`}
                   className="object-cover"
                 />
@@ -101,21 +101,21 @@ function RouteComponent() {
             <div className="grid gap-8 md:grid-cols-3">
               <div className="relative overflow-hidden rounded-lg aspect-square">
                 <img
-                  src={project.image || "/placeholder.svg"}
+                  src={project.imgs[3] || "/placeholder.svg"}
                   alt={`${project.title} - Detalle 1`}
                   className="object-cover"
                 />
               </div>
               <div className="relative overflow-hidden rounded-lg aspect-square">
                 <img
-                  src={project.image || "/placeholder.svg"}
+                  src={project.imgs[4] || "/placeholder.svg"}
                   alt={`${project.title} - Detalle 2`}
                   className="object-cover"
                 />
               </div>
               <div className="relative overflow-hidden rounded-lg aspect-square">
                 <img
-                  src={project.image || "/placeholder.svg"}
+                  src={project.imgs[5] || "/placeholder.svg"}
                   alt={`${project.title} - Detalle 3`}
                   className="object-cover"
                 />
@@ -135,7 +135,7 @@ function RouteComponent() {
           {prevProject ? (
             <Link
               to='/proyectos/$proyectoId'
-              params = {{proyectoId: prevProject.id}}
+              params = {{proyectoId: prevProject.slug}}
               className="flex items-center space-x-4 transition-colors group hover:text-primary"
             >
               <ArrowLeft className="w-5 h-5" />
@@ -151,7 +151,7 @@ function RouteComponent() {
           {nextProject ? (
             <Link
               to='/proyectos/$proyectoId'
-              params={{ proyectoId: nextProject.id }}
+              params={{ proyectoId: nextProject.slug }}
               className="flex items-center space-x-4 text-right transition-colors group hover:text-primary"
             >
               <div>

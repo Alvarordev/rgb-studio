@@ -3,89 +3,69 @@ import { useState } from "react";
 import AnimatedTitle from "./animated-title";
 import AnimatedNumber from "./animated-number";
 import ProjectImageCard from "./animated-proyection";
+import { projects } from "@/lib/projects";
+import { cn } from "@/lib/utils";
 
 const transition: Transition = {
   type: "tween",
   duration: 0.9,
 };
 
-const items = [
-  {
-    id: 0,
-    index: 2,
-    x: -650,
-    scale: 0,
-    img: "/modern-country-house-interior-with-natural-integra.png",
-    title: "Casa de Campo Moderna",
-    slug: "casa-de-campo-moderna",
-  },
-  {
-    id: 1,
-    index: 1,
-    x: -530,
-    scale: 1,
-    img: "/contemporary-loft-with-minimalist-design.png",
-    title: "Casa Moderna en Kieveskoe",
-    slug: "casa-moderna-en-kieveskoe",
-  },
-  {
-    id: 2,
-    index: 0,
-    x: 0,
-    scale: 2,
-    img: "/urban-residential-interior-with-industrial-element.png",
-    title: "Residencia Urbana Central",
-    slug: "residencia-urbana-central",
-  },
-  {
-    id: 3,
-    index: 4,
-    x: 530,
-    scale: 1,
-    img: "/mediterranean-villa-interior-with-panoramic-views.png",
-    title: "Villa Mediterránea",
-    slug: "villa-mediterranea",
-  },
-  {
-    id: 4,
-    index: 3,
-    x: 650,
-    scale: 0,
-    img: "/modern-minimalist-living-room-with-neutral-tones.png",
-    title: "Loft Contemporáneo",
-    slug: "loft-contemporaneo",
-  },
-];
+const fiveProjects = projects.filter((project) => project.id < 5);
+
+const projectsIndex = fiveProjects.map((project, index) => ({
+  ...project,
+  index: index == 0 ? 2 : index == 1 ? 1 : index == 2 ? 0 : index == 3 ? 4 : 3,
+  x:
+    index === 0
+      ? -700
+      : index === 1
+      ? -580
+      : index === 2
+      ? 0
+      : index === 3
+      ? 580
+      : 700,
+  scale: index === 0 || index === 4 ? 0 : index === 1 || index === 3 ? 1 : 2,
+}));
+
+
+
+console.log(projectsIndex);
 
 function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [triggerAnimation, setTriggerAnimation] = useState(0);
 
   const handleAnimateRight = () => {
-    setCurrentIndex((prev) => (prev + 1) % items.length);
+    setCurrentIndex((prev) => (prev + 1) % projectsIndex.length);
     setTriggerAnimation((prev) => prev + 1);
   };
 
   const handleAnimateLeft = () => {
-    setCurrentIndex((prev) => (prev - 1 + items.length) % items.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + projectsIndex.length) % projectsIndex.length
+    );
     setTriggerAnimation((prev) => prev + 1);
   };
 
   return (
     <>
       <div className="relative flex justify-center w-[500px] h-80">
-        {items.map((item, index) => {
-          const newIndex = (index + currentIndex) % items.length;
+        {projectsIndex.map((item, index) => {
+          const newIndex = (index + currentIndex) % projectsIndex.length;
+          const isCenter = currentIndex === item.index;
           const animateState = {
-            x: items[newIndex].x,
-            scale: items[newIndex].scale,
+            x: projectsIndex[newIndex].x,
+            scale: projectsIndex[newIndex].scale,
+            y: isCenter ? 0 : 100,
           };
           const isHidden = animateState.scale === 0;
 
           return (
             <motion.div
               key={item.id}
-              className={`w-56 h-56 absolute top-0`}
+              className={`w-56 h-56 absolute top-0 group`}
               initial={{ x: item.x, scale: item.scale }}
               animate={animateState}
               transition={transition}
@@ -94,64 +74,56 @@ function Carousel() {
                 visibility: isHidden ? "hidden" : "visible",
               }}
             >
-              {currentIndex == item.index ? (
+              {isCenter ? (
                 <div className="flex justify-center w-full h-full ">
-                  <ProjectImageCard slug={item.slug} img={item.img}/>
-
+                  <ProjectImageCard slug={item.slug} img={item.imgs[0]} />
                 </div>
               ) : (
-                <img
-                  src={item.img}
-                  alt={`Image ${item.id}`}
-                  className="object-cover h-full mx-auto w-44"
-                />
+                <>
+                  <img
+                    src={item.imgs[0]}
+                    alt={`Image ${item.id}`}
+                    className="object-cover h-full mx-auto cursor-pointer w-44"
+                    onClick={() => {
+                      // Si la imagen está a la izquierda (index < 2), animar a la derecha
+                      // Si está a la derecha (index > 2), animar a la izquierda
+                      if (projectsIndex[newIndex].index < 2) {
+                        handleAnimateLeft();
+                      } else if (projectsIndex[newIndex].index > 2) {
+                        handleAnimateRight();
+                      }
+                    }}
+                  />
+                </>
               )}
 
               <AnimatedNumber
-                value={
-                  currentIndex != item.index
-                    ? item.id == 0
-                      ? "05"
-                      : "0" + item.id
-                    : ""
-                }
+                value={!isCenter ? (item.id == 0 ? "05" : "0" + item.id) : ""}
                 trigger={triggerAnimation}
+                className={cn(
+                  "transition-colors group-hover:saturate-150",
+                  { [projectsIndex[newIndex].index < 2 ? "group-hover:text-[#B89B9E]" : "group-hover:text-primary-foreground"]: true }
+                )}
               />
 
               <AnimatedTitle
-                title={
-                  currentIndex == item.index ? item.title.toUpperCase() : ""
-                }
+                title={isCenter ? item.title.toUpperCase() : ""}
                 trigger={triggerAnimation}
+                className="text-2xl transition-colors group-hover:text-[#7BAA96] group-hover:saturate-150"
               />
             </motion.div>
           );
         })}
 
-        <div
-          className="absolute z-10 w-48 h-56 -left-[380px] cursor-pointer group"
+        {/* <div
+          className="absolute z-10 w-48 h-56 -bottom-[5px] -left-[380px] cursor-pointer group"
           onClick={handleAnimateRight}
         />
         <div
-          className="absolute z-10 w-48 h-56 -right-[380px] cursor-pointer"
+          className="absolute z-10 w-48 h-56 -bottom-[5px] -right-[380px] cursor-pointer"
           onClick={handleAnimateLeft}
-        />
+        /> */}
       </div>
-
-      {/* <div className="flex gap-4 mt-10">
-        <button
-          onClick={handleAnimateLeft}
-          className="px-4 py-2 text-white transition-colors bg-blue-500 rounded hover:bg-blue-600"
-        >
-          Animate Left
-        </button>
-        <button
-          onClick={handleAnimateRight}
-          className="px-4 py-2 text-white transition-colors bg-blue-500 rounded hover:bg-blue-600"
-        >
-          Animate Right
-        </button>
-      </div> */}
     </>
   );
 }

@@ -1,38 +1,47 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
-import Header from '../components/header'
-import { Footer } from '../components/footer'
-import { projects } from '@/lib/mock'
+import { createFileRoute, Link } from "@tanstack/react-router";
+import Header from "../components/header";
+import { Footer } from "../components/footer";
+import { projects } from "@/lib/projects";
+import AnimatedTitle from "../components/animated-title";
 
-export const Route = createFileRoute('/proyectos/')({
+export const Route = createFileRoute("/proyectos/")({
   component: RouteComponent,
-})
+});
 
 function RouteComponent() {
   return (
-    <div className="min-h-screen bg-background">
-      <Header/>
+    <div className="min-h-screen bg-neutral-400/40 font-montserrat">
+      <Header />
 
-      <main className="max-w-7xl w-full mx-auto px-4 py-16 mt-20">
-        <div className="text-center mb-16">
-          <h1 className="text-6xl md:text-8xl font-light text-foreground mb-4 text-balance">NUESTROS</h1>
-          <h1 className="text-6xl md:text-8xl font-light text-foreground mb-8 text-balance">PROYECTOS</h1>
-          <div className="w-24 h-px bg-primary mx-auto"></div>
+      <main className="w-full px-4 py-16 mx-auto mt-20 max-w-7xl">
+        <div className="mb-16 text-center">
+          <AnimatedTitle title="NUESTROS PROYECTOS" firstLineWords={1} secondLineWords={1} trigger={1} className="font-light text-8xl"/>
+          <div className="w-48 h-px mx-auto mt-4 bg-primary"></div>
         </div>
 
         <div className="space-y-24">
           {projects.map((project, index) => (
-            <Link key={project.id} to="/proyectos/$proyectoId" params={{ proyectoId: project.id }} className="group block">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className={`space-y-6 ${index % 2 === 1 ? "md:order-2" : ""}`}>
+            <Link
+              key={project.id}
+              to="/proyectos/$proyectoId"
+              params={{ proyectoId: project.slug }}
+              className="block group"
+            >
+              <div className="grid items-center gap-12 md:grid-cols-2">
+                <div
+                  className={`space-y-6 ${index % 2 === 1 ? "md:order-2" : ""}`}
+                >
                   <div className="flex items-baseline space-x-6">
-                    <span className="text-8xl md:text-9xl font-light text-muted-foreground/30">
+                    <span className="font-light text-8xl md:text-9xl text-muted-foreground/30">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <div>
-                      <h2 className="text-3xl md:text-4xl font-light text-foreground mb-2 group-hover:text-primary transition-colors text-balance">
+                      <h2 className="mb-2 text-3xl font-light transition-colors md:text-4xl text-foreground group-hover:text-primary text-balance">
                         {project.title}
                       </h2>
-                      <p className="text-lg text-muted-foreground mb-4 text-pretty">{project.subtitle}</p>
+                      <p className="mb-4 text-lg text-muted-foreground text-pretty">
+                        {project.title}
+                      </p>
                       <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
                         <span>{project.year}</span>
                         <span>•</span>
@@ -45,14 +54,16 @@ function RouteComponent() {
                 </div>
 
                 <div
-                  className={`relative aspect-[4/3] overflow-hidden rounded-lg ${index % 2 === 1 ? "md:order-1" : ""}`}
+                  className={`relative aspect-[4/3] overflow-hidden rounded-lg ${
+                    index % 2 === 1 ? "md:order-1" : ""
+                  }`}
                 >
                   <img
-                    src={project.image || "/placeholder.svg"}
+                    src={project.imgs[0] || "/placeholder.svg"}
                     alt={project.title}
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+                  <div className="absolute inset-0 transition-colors duration-300 bg-black/20 group-hover:bg-black/10"></div>
                 </div>
               </div>
             </Link>
@@ -60,7 +71,7 @@ function RouteComponent() {
         </div>
       </main>
 
-      <Footer/>
+      <Footer />
     </div>
-  )
+  );
 }

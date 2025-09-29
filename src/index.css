@@ -78,7 +78,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(0.8853 0 0);
   --foreground: oklch(0.1957 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.1957 0 0);
@@ -147,7 +147,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 scroll-smooth;
   }
   body {
     @apply bg-background text-foreground;
