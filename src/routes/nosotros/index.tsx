@@ -11,7 +11,7 @@ export const Route = createFileRoute("/nosotros/")({
 
 const team = [
   {
-    name: "Alvaro Diaz",
+    name: "Alvaro Rojas",
     position: "Arquitecto & Socio-Fundador",
     description:
       "Graduado con una licenciatura en Arquitectura por la Universidad Peruana de Ciencias Aplicadas (UPC), Álvaro comenzó su carrera en un estudio de diseño de interiores de alta gama. Escaló hasta ser diseñador senior, produciendo diseños que le valieron premios nacionales e internacionales. Su experiencia combina un gran conocimiento y pasión en el sector de diseño interior residencial y comercial de lujo.",
