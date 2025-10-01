@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import AnimatedTitle from "../components/animated-title";
 import Header from "../components/header";
 import HoverSlideIn from "../components/hover-slide-in";
+import { Footer } from "../components/footer";
+import { MemberSlider } from "./components/member-slider";
 
 export const Route = createFileRoute("/nosotros/")({
   component: RouteComponent,
@@ -10,18 +12,21 @@ export const Route = createFileRoute("/nosotros/")({
 const team = [
   {
     name: "Alvaro Diaz",
+    position: "Arquitecto & Socio-Fundador",
     description:
       "Graduado con una licenciatura en Arquitectura por la Universidad Peruana de Ciencias Aplicadas (UPC), Álvaro comenzó su carrera en un estudio de diseño de interiores de alta gama. Escaló hasta ser diseñador senior, produciendo diseños que le valieron premios nacionales e internacionales. Su experiencia combina un gran conocimiento y pasión en el sector de diseño interior residencial y comercial de lujo.",
     imageUrl: "/about/alv.png",
   },
   {
     name: "Katherine Diaz",
+    position: "Arquitecta & Socia-Fundador",
     description:
       "Tras obtener su título de Arquitectura por la Universidad Peruana de Ciencias Aplicadas (UPC), Katherine se unió a un prestigioso estudio de diseño de lujo. Ascendió a diseñadora principal, liderando proyectos reconocidos con importantes galardones de diseño global. Katherine aporta una experiencia vasta, enfocada en la estética y el conocimiento técnico profundo en el diseño de interiores premium residencial y comercial.",
     imageUrl: "/about/kat.png",
   },
   {
     name: "Marjorie Fribourg",
+    position: "Arquitecta & Socia-Fundador",
     description:
       "Después de licenciarse como Arquitecta en la Universidad Peruana de Ciencias Aplicadas (UPC), Marjorie se integró a una reconocida firma de diseño interior premium. Creció hasta convertirse en diseñadora senior, donde sus propuestas creativas ganaron múltiples premios de diseño a nivel nacional e internacional. Marjorie posee una experiencia completa, con dominio experto en proyectos de diseño de interiores en los segmentos comercial y residencial de lujo.",
     imageUrl: "/about/mar.png",
@@ -40,29 +45,45 @@ function RouteComponent() {
           className="mt-20 font-light text-8xl"
         />
 
-        <div className="flex px-20 mt-20">
+        <div className="flex justify-between w-full px-20 mt-32">
           <img
             src="/about/grupal.png"
             alt="nosotros"
-            className="min-w-[60vh] h-[80vh]  object-cover"
+            className="min-w-[65vh] h-[55vh] object-cover object-top"
           />
 
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
-            voluptas facere rem eaque harum enim porro, quisquam, deserunt
-            laborum soluta esse. Voluptates harum sit consequatur, dignissimos
-            delectus molestiae dolorum expedita.
-          </p>
+          <div className="flex flex-col gap-4 w-[54vh] uppercase">
+            <p className="text-sm leading-8">
+              RGB es un estudio de arquitectura y diseño que busca crear
+              espacios únicos, funcionales y atemporales, adaptados a la visión
+              y necesidades de cada cliente.
+              <br className="mb-5"/>
+              Trabajamos cada proyecto de manera cercana y colaborativa,
+              transformando ideas en lugares que inspiran y perduran en el
+              tiempo.
+            </p>
+          </div>
         </div>
       </section>
 
-
       <section className="container flex justify-between py-32 mx-auto px-28 text-card">
-        <h2 className="uppercase text-7xl">We take pride <br/> in delivering <br/> Exceptional <br/> Results </h2>
+        <h2 className="text-[4rem] leading-16 uppercase">
+          comprometidos <br /> en entregar <br /> excepcionales <br /> resultados
+        </h2>
 
-        <div className="flex flex-col items-center w-1/2 gap-20 pl-40">
-          <p className="leading-8 text-wrap">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, dignissimos, accusamus temporibus libero deleniti saepe dolore eligendi quisquam fuga culpa eius aliquam, optio nostrum autem! </p>
-          <img src="/logos/logo-reducido-blanco.png" alt="logo reducido" className="w-72" />
+        <div className="flex flex-col items-center w-full gap-20 pl-56">
+          <p className="text-sm leading-8 uppercase">
+            Cada proyecto lo abordamos con la misma pasión y compromiso,
+            cuidando los detalles y buscando siempre un equilibrio entre
+            estética, funcionalidad y sostenibilidad. Nos inspira trabajar de
+            manera colaborativa, compartiendo visiones y experiencias que
+            enriquecen el proceso creativo y hacen que cada propuesta sea única.
+          </p>
+          <img
+            src="/logos/logo-reducido-blanco.png"
+            alt="logo reducido"
+            className="w-72"
+          />
         </div>
       </section>
 
@@ -73,7 +94,11 @@ function RouteComponent() {
           </p>
           <div className="h-[1px] w-28 bg-background mt-3 "></div>
 
-          <p className="mt-10 text-background/80">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sit laborum, optio, voluptas enim itaque aperiam debitis dolorem eos possimus esse fuga.</p>
+          <p className="mt-10 text-background/80">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+            sit laborum, optio, voluptas enim itaque aperiam debitis dolorem eos
+            possimus esse fuga.
+          </p>
         </div>
         <div className="container grid justify-between grid-cols-6 gap-20 px-20 mx-auto">
           <div className="col-span-2 h-[50vh]">
@@ -88,32 +113,16 @@ function RouteComponent() {
         </div>
       </section>
 
-      <section className="w-full h-full bg-foreground text-card">
-        <div className="flex flex-col w-full gap-20">
-          {team.map((member) => (
-            <div
-              key={member.name}
-              className="relative flex justify-between w-full max-w-6xl mx-auto"
-            >
-              <img
-                src={member.imageUrl}
-                alt={member.name}
-                className="h-[720px] min-w-[610px] object-cover"
-              />
-              <div className="flex flex-col pl-32">
-                <AnimatedTitle
-                  title={member.name}
-                  trigger={1}
-                  className="text-6xl font-medium uppercase text-start"
-                />
-                <p className="mt-auto text-sm leading-6 text-left">
-                  {member.description}
-                </p>
-              </div>
-            </div>
-          ))}
+      <section className="container w-full h-screen px-20 mx-auto bg-foreground text-card">
+        <h3 className="text-5xl">NUESTRO EQUIPO</h3>
+
+        <div className="w-full bg-white h-[1px] my-15"></div>
+
+        <div className="flex flex-col w-full">
+          <MemberSlider team={team} />
         </div>
       </section>
+      <Footer />
     </main>
   );
 }

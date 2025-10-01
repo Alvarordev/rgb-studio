@@ -88,9 +88,9 @@ function Carousel() {
                       // Si la imagen está a la izquierda (index < 2), animar a la derecha
                       // Si está a la derecha (index > 2), animar a la izquierda
                       if (projectsIndex[newIndex].index < 2) {
-                        handleAnimateLeft();
-                      } else if (projectsIndex[newIndex].index > 2) {
                         handleAnimateRight();
+                      } else if (projectsIndex[newIndex].index > 2) {
+                        handleAnimateLeft();
                       }
                     }}
                   />

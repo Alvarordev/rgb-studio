@@ -17,9 +17,9 @@ const HoverSlideIn = ({
     {
       variants: {
         color: {
-          blue: "bg-primary/80",
-          red: "bg-[#5C2D33]/80",
-          green: "bg-[#32523A]/80",
+          blue: "bg-primary/70",
+          red: "bg-[#5C2D33]/70",
+          green: "bg-[#32523A]/70",
         },
       },
     }
@@ -36,9 +36,9 @@ const HoverSlideIn = ({
       <motion.div
         className={cn(variants({ color }))}
         initial={{ y: "100%" }}
-        animate={{ y: hovered ? "0%" : "100%" }}
+        animate={{ y: hovered ? "0%" : "0%" }}
         transition={{ type: "tween", duration: 0.4 }}
-        style={{ backdropFilter: "blur(0.5px)" }}
+        style={{ backdropFilter: "blur(0.4px)" }}
       />
     </div>
   );

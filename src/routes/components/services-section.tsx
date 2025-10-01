@@ -39,17 +39,17 @@ export function ServicesSection() {
     <section id="servicios" className="w-full min-h-screen py-20 mx-auto bg-background max-w-7xl">
       <div className="container px-4 mx-auto sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
-          <p className="mb-4 text-sm tracking-wider uppercase text-muted-foreground">Lo Que Hacemos</p>
+          <p className="mb-4 text-sm font-medium tracking-wider uppercase text-foreground/50">Lo Que Hacemos</p>
           <h2 className="mb-6 text-4xl font-bold md:text-5xl text-foreground">
             Estamos Aquí Para Crear
             <br />
-            <span className="text-primary">Tu Diseño Arquitectónico Ideal</span>
+            <span>Tu Diseño Arquitectónico Ideal</span>
           </h2>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <Card key={index} className="transition-all duration-300 group hover:shadow-lg bg-card hover:bg-primary-foreground hover:text-white">
+            <Card key={index} className="transition-all duration-300 rounded-none group hover:shadow-lg bg-card hover:bg-primary-foreground hover:text-white">
               <CardContent className="p-8">
                 <div className="mb-6">
                   <div className="flex items-center justify-center w-16 h-16 transition-colors rounded-lg bg-primary/10 group-hover:bg-primary/20">
