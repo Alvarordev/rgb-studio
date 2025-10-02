@@ -46,7 +46,7 @@ function AboutSection() {
               Trabajamos con pasión y dedicación, creando propuestas únicas que buscan inspirar, conectar y trascender en el tiempo.
             </p>
             <AnimatedImage
-              img="/about/grupal.png"
+              img="/about/grupal.webp"
               classname="mt-40 h-[70vh] object-cover w-full"
             />
 

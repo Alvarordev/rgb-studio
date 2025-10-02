@@ -15,21 +15,21 @@ const team = [
     position: "Arquitecto & Socio-Fundador",
     description:
       "Graduado con una licenciatura en Arquitectura por la Universidad Peruana de Ciencias Aplicadas (UPC), Álvaro comenzó su carrera en un estudio de diseño de interiores de alta gama. Escaló hasta ser diseñador senior, produciendo diseños que le valieron premios nacionales e internacionales. Su experiencia combina un gran conocimiento y pasión en el sector de diseño interior residencial y comercial de lujo.",
-    imageUrl: "/about/alv.png",
+    imageUrl: "/about/alv.webp",
   },
   {
     name: "Katherine Diaz",
     position: "Arquitecta & Socia-Fundador",
     description:
       "Tras obtener su título de Arquitectura por la Universidad Peruana de Ciencias Aplicadas (UPC), Katherine se unió a un prestigioso estudio de diseño de lujo. Ascendió a diseñadora principal, liderando proyectos reconocidos con importantes galardones de diseño global. Katherine aporta una experiencia vasta, enfocada en la estética y el conocimiento técnico profundo en el diseño de interiores premium residencial y comercial.",
-    imageUrl: "/about/kat.png",
+    imageUrl: "/about/kat.webp",
   },
   {
     name: "Marjorie Fribourg",
     position: "Arquitecta & Socia-Fundador",
     description:
       "Después de licenciarse como Arquitecta en la Universidad Peruana de Ciencias Aplicadas (UPC), Marjorie se integró a una reconocida firma de diseño interior premium. Creció hasta convertirse en diseñadora senior, donde sus propuestas creativas ganaron múltiples premios de diseño a nivel nacional e internacional. Marjorie posee una experiencia completa, con dominio experto en proyectos de diseño de interiores en los segmentos comercial y residencial de lujo.",
-    imageUrl: "/about/mar.png",
+    imageUrl: "/about/mar.webp",
   },
 ];
 
@@ -73,13 +73,13 @@ function RouteComponent() {
             </p>
           <div className="container grid justify-between grid-cols-6 gap-20 px-20 mx-auto">
           <div className="col-span-2 h-[50vh]">
-            <HoverSlideIn src="/about/boca.png" alt="boca" color="red" />
+            <HoverSlideIn src="/about/boca.webp" alt="boca" color="red" />
           </div>
           <div className="col-span-2 h-[50vh]">
-            <HoverSlideIn src="/about/oidos.png" alt="boca" color="green" />
+            <HoverSlideIn src="/about/oidos.webp" alt="boca" color="green" />
           </div>
           <div className="col-span-2 h-[50vh]">
-            <HoverSlideIn src="/about/ojos.png" alt="boca" color="blue" />
+            <HoverSlideIn src="/about/ojos.webp" alt="boca" color="blue" />
           </div>
         </div>
         </div>
