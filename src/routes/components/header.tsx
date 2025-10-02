@@ -11,7 +11,7 @@ function Header({ lightMode = false }: { lightMode?: boolean }) {
       }`}
     >
       <div
-        className={`container flex items-center w-full h-20 transition-all pointer-events-auto cotainer px-15 ${
+        className={`container flex items-center w-full h-20 transition-all pointer-events-auto cotainer xl:px-15 ${
           lightMode ? "bg-background" : "bg-foreground"
         } text-card`}
       >

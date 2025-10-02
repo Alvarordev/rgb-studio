@@ -10,15 +10,15 @@ function RouteComponent() {
   return (
     <main className="w-full h-screen overflow-hidden bg-foreground font-montserrat">
       <Header />
-      <div className="container flex flex-col justify-end flex-1 h-full px-20 py-16 mx-auto ">
+      <div className="container flex flex-col justify-end flex-1 h-full py-16 mx-auto xl:px-20 ">
         <div className="flex justify-between pb-30">
           <img
             src="/logos/Entrega_Marca Completa-RGB studio-Blanca SIN FONDO.png"
             alt="logo"
-            className="h-[450px]"
+            className="xl:h-[450px] h-[380px]"
           />
 
-          <div className="flex flex-col gap-8 text-card max-w-80">
+          <div className="flex flex-col gap-4 xl:gap-8 text-card max-w-80">
             <div>
               <p className="text-xs font-semibold text-card/40">CORREO</p>
               <p className="pt-2 text-sm">INFO@RGBSTUDIO.COM</p>

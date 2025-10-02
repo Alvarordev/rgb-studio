@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 function AboutSection() {
   return (
     <section className="flex flex-col w-full bg-background text-foreground">
-      <div className="container grid w-full grid-cols-6 py-32 mx-auto px-15">
+      <div className="container grid w-full grid-cols-6 mx-auto py-28 xl:py-32 xl:px-15">
         <div className="flex flex-col items-center col-span-6 pb-20">
           <p className="font-medium tracking-wider uppercase text-medium font-oswald">
             SOBRE NOSOTROS
@@ -16,10 +16,10 @@ function AboutSection() {
         <div className="relative col-span-3 pl-20">
           <AnimatedImage
             img="/02/02-3.jpg"
-            classname="w-[80%] h-[70vh] object-cover"
+            classname="w-[80%] xl:h-[70vh] h-[65vh] object-cover"
           />
 
-          <div className="w-[80%] mt-40">
+          <div className="w-[80%] xl:mt-40 mt-32 xl:text-base text-sm">
             <p className="mb-4 text-foreground">
               En RGB creemos en la arquitectura como una forma de transformar ideas en espacios con identidad propia. 
             </p>
@@ -34,7 +34,7 @@ function AboutSection() {
         </div>
 
         <div className="flex flex-col items-end col-span-3 pr-20">
-          <div className="w-[80%]">
+          <div className="w-[80%] xl:text-base text-sm">
              <p className="mb-4 text-foreground">
               En RGB creemos en la arquitectura como una forma de transformar ideas en espacios con identidad propia. 
             </p>
@@ -47,7 +47,7 @@ function AboutSection() {
             </p>
             <AnimatedImage
               img="/about/grupal.webp"
-              classname="mt-40 h-[70vh] object-cover w-full"
+              classname="xl:mt-40 mt-32 xl:h-[70vh] h-[65vh] object-cover w-full"
             />
 
 

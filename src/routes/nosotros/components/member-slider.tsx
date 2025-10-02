@@ -34,13 +34,13 @@ export const MemberSlider = ({ team }: { team: Member[] }) => {
             <img
               src={team[active].imageUrl}
               alt={team[active].name}
-              className="h-[65vh] min-w-[55vh] object-cover"
+              className="xl:h-[65vh] h-[60vh] xl:min-w-[55vh] min-w-[50vh] object-cover"
             />
-            <div className="flex flex-col items-start pl-32">
+            <div className="flex flex-col items-start pl-16 xl:pl-32">
               <AnimatedTitle
                 title={team[active].name}
                 trigger={active}
-                className="text-6xl font-medium uppercase text-start"
+                className="text-5xl font-medium uppercase xl:text-6xl text-start"
               />
 
               <p className="mt-4 font-semibold text-background/40">

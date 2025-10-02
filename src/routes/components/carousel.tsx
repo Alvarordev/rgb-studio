@@ -11,29 +11,51 @@ const transition: Transition = {
   duration: 0.9,
 };
 
+
 const fiveProjects = projects.filter((project) => project.id < 5);
 
-const projectsIndex = fiveProjects.map((project, index) => ({
-  ...project,
-  index: index == 0 ? 2 : index == 1 ? 1 : index == 2 ? 0 : index == 3 ? 4 : 3,
-  x:
-    index === 0
-      ? -700
-      : index === 1
-      ? -580
-      : index === 2
-      ? 0
-      : index === 3
-      ? 580
-      : 700,
-  scale: index === 0 || index === 4 ? 0 : index === 1 || index === 3 ? 1 : 2,
-}));
+import { useEffect } from "react";
 
+function getXValues() {
+  if (typeof window !== "undefined" && window.innerWidth < 1440) {
+    return [-500, -420, 0, 420, 500];
+  }
+  return [-700, -580, 0, 580, 700];
+}
 
+function getProjectsIndex() {
+  const xVals = getXValues();
+  return fiveProjects.map((project, index) => ({
+    ...project,
+    index: index == 0 ? 2 : index == 1 ? 1 : index == 2 ? 0 : index == 3 ? 4 : 3,
+    x:
+      index === 0
+        ? xVals[0]
+        : index === 1
+        ? xVals[1]
+        : index === 2
+        ? xVals[2]
+        : index === 3
+        ? xVals[3]
+        : xVals[4],
+    scale: index === 0 || index === 4 ? 0 : index === 1 || index === 3 ? 1 : 2,
+  }));
+}
 
-console.log(projectsIndex);
+function useResponsiveProjectsIndex() {
+  const [projectsIndex, setProjectsIndex] = useState(getProjectsIndex());
+  useEffect(() => {
+    function handleResize() {
+      setProjectsIndex(getProjectsIndex());
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return projectsIndex;
+}
 
 function Carousel() {
+  const projectsIndex = useResponsiveProjectsIndex();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [triggerAnimation, setTriggerAnimation] = useState(0);
 
@@ -65,7 +87,7 @@ function Carousel() {
           return (
             <motion.div
               key={item.id}
-              className={`w-56 h-56 absolute top-0 group`}
+              className={`w-56 xl:h-56 h-52 absolute top-0 group`}
               initial={{ x: item.x, scale: item.scale }}
               animate={animateState}
               transition={transition}
@@ -83,10 +105,8 @@ function Carousel() {
                   <img
                     src={item.imgs[0]}
                     alt={`Image ${item.id}`}
-                    className="object-cover h-full mx-auto cursor-pointer w-44"
+                    className="object-cover w-40 h-full mx-auto cursor-pointer xl:w-44"
                     onClick={() => {
-                      // Si la imagen está a la izquierda (index < 2), animar a la derecha
-                      // Si está a la derecha (index > 2), animar a la izquierda
                       if (projectsIndex[newIndex].index < 2) {
                         handleAnimateRight();
                       } else if (projectsIndex[newIndex].index > 2) {
@@ -114,15 +134,6 @@ function Carousel() {
             </motion.div>
           );
         })}
-
-        {/* <div
-          className="absolute z-10 w-48 h-56 -bottom-[5px] -left-[380px] cursor-pointer group"
-          onClick={handleAnimateRight}
-        />
-        <div
-          className="absolute z-10 w-48 h-56 -bottom-[5px] -right-[380px] cursor-pointer"
-          onClick={handleAnimateLeft}
-        /> */}
       </div>
     </>
   );

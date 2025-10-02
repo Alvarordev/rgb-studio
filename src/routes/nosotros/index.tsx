@@ -42,56 +42,39 @@ function RouteComponent() {
         <AnimatedTitle
           title="NOSOTROS"
           trigger={1}
-          className="mt-20 font-medium text-8xl font-oswald"
+          className="mt-10 font-medium xl:mt-20 xl:text-8xl text-7xl font-oswald"
         />
 
-        <div className="flex flex-col items-center justify-between w-full px-20 mt-4">
-          {/* <img
-            src="/about/SSSSFSAF.jpg"
-            alt="nosotros"
-            className="max-w-7xl w-full h-[50vh] object-cover object-center"
-          />
-
-          <div className="flex flex-col w-full max-w-3xl gap-4 mt-5 text-center uppercase">
-            <p className="text-sm leading-8">
-              RGB es un estudio de arquitectura y diseño que busca crear
-              espacios únicos, funcionales y atemporales, adaptados a la visión
-              y necesidades de cada cliente.
-              Trabajamos cada proyecto de manera cercana y colaborativa,
-              transformando ideas en lugares que inspiran y perduran en el
-              tiempo.
-            </p>
-          </div> */}
-
+        <div className="flex flex-col items-center justify-between w-full mt-4 xl:px-20">
           <p className="w-full max-w-4xl mb-20 text-base leading-8 text-center">
-              RGB es un estudio de arquitectura y diseño que busca crear
-              espacios únicos, funcionales y atemporales, adaptados a la visión
-              y necesidades de cada cliente.
-              Trabajamos cada proyecto de manera cercana y colaborativa,
-              transformando ideas en lugares que inspiran y perduran en el
-              tiempo.
-            </p>
-          <div className="container grid justify-between grid-cols-6 gap-20 px-20 mx-auto">
-          <div className="col-span-2 h-[50vh]">
-            <HoverSlideIn src="/about/boca.webp" alt="boca" color="red" />
+            RGB es un estudio de arquitectura y diseño que busca crear espacios
+            únicos, funcionales y atemporales, adaptados a la visión y
+            necesidades de cada cliente. Trabajamos cada proyecto de manera
+            cercana y colaborativa, transformando ideas en lugares que inspiran
+            y perduran en el tiempo.
+          </p>
+          <div className="container grid justify-between grid-cols-6 gap-10 mx-auto xl:gap-20 xl:px-20">
+            <div className="col-span-2 h-[50vh]">
+              <HoverSlideIn src="/about/boca.webp" alt="boca" color="red" />
+            </div>
+            <div className="col-span-2 h-[50vh]">
+              <HoverSlideIn src="/about/oidos.webp" alt="boca" color="green" />
+            </div>
+            <div className="col-span-2 h-[50vh]">
+              <HoverSlideIn src="/about/ojos.webp" alt="boca" color="blue" />
+            </div>
           </div>
-          <div className="col-span-2 h-[50vh]">
-            <HoverSlideIn src="/about/oidos.webp" alt="boca" color="green" />
-          </div>
-          <div className="col-span-2 h-[50vh]">
-            <HoverSlideIn src="/about/ojos.webp" alt="boca" color="blue" />
-          </div>
-        </div>
         </div>
       </section>
 
-      <section className="container flex justify-between h-screen py-32 mx-auto px-28 text-card">
-        <h2 className="text-[4.8rem] leading-20 uppercase font-oswald">
-          comprometidos <br /> en entregar <br /> excepcionales <br /> resultados
+      <section className="container flex justify-between h-screen py-32 mx-auto xl:px-28 text-card">
+        <h2 className="xl:text-[4.8rem] text-6xl xl:leading-20 leading-18 uppercase font-oswald">
+          comprometidos <br /> en entregar <br /> excepcionales <br />{" "}
+          resultados
         </h2>
 
-        <div className="flex flex-col items-center w-full gap-20 pt-8 pl-72">
-          <p className="text-base leading-9 uppercase">
+        <div className="flex flex-col items-center w-full gap-20 pl-56 xl:pt-8 xl:pl-72">
+          <p className="text-sm leading-7 uppercase xl:leading-9 xl:text-base">
             Cada proyecto lo abordamos con la misma pasión y compromiso,
             cuidando los detalles y buscando siempre un equilibrio entre
             estética, funcionalidad y sostenibilidad. Nos inspira trabajar de
@@ -106,33 +89,7 @@ function RouteComponent() {
         </div>
       </section>
 
-      {/* <section className="w-full h-screen py-20 text-card">
-        <div className="flex flex-col items-center pb-20">
-          <p className="text-sm font-medium tracking-wider uppercase">
-            Nuestro Equipo
-          </p>
-          <div className="h-[1px] w-28 bg-background mt-3 "></div>
-
-          <p className="mt-10 text-background/80">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-            sit laborum, optio, voluptas enim itaque aperiam debitis dolorem eos
-            possimus esse fuga.
-          </p>
-        </div>
-        <div className="container grid justify-between grid-cols-6 gap-20 px-20 mx-auto">
-          <div className="col-span-2 h-[50vh]">
-            <HoverSlideIn src="/about/boca.png" alt="boca" color="red" />
-          </div>
-          <div className="col-span-2 h-[50vh]">
-            <HoverSlideIn src="/about/oidos.png" alt="boca" color="green" />
-          </div>
-          <div className="col-span-2 h-[50vh]">
-            <HoverSlideIn src="/about/ojos.png" alt="boca" color="blue" />
-          </div>
-        </div>
-      </section> */}
-
-      <section className="container w-full h-screen px-20 mx-auto bg-foreground text-card">
+      <section className="container w-full h-screen mx-auto xl:px-20 bg-foreground text-card">
         <h3 className="text-5xl font-oswald text-medium">NUESTRO EQUIPO</h3>
 
         <div className="w-full bg-white h-[1px] my-15"></div>

@@ -15,7 +15,7 @@ function RouteComponent() {
 
       <main className="w-full px-4 pb-16 mx-auto mt-20 max-w-7xl">
         <div className="mb-16 text-center">
-          <AnimatedTitle title="NUESTROS PROYECTOS" firstLineWords={1} secondLineWords={1} trigger={1} className="font-medium text-8xl font-oswald"/>
+          <AnimatedTitle title="NUESTROS PROYECTOS" firstLineWords={1} secondLineWords={1} trigger={1} className="font-medium xl:text-8xl text-7xl font-oswald"/>
           <div className="w-48 h-px mx-auto mt-4 bg-primary"></div>
         </div>
 

@@ -17,7 +17,7 @@ function ProjectImageCard({
 
   return (
     <motion.div
-      className="relative h-full overflow-hidden transition-transform duration-500 cursor-pointer w-44 hover:scale-105"
+      className="relative w-40 h-full overflow-hidden transition-transform duration-500 cursor-pointer xl:w-44 hover:scale-105"
       onClick={() => navigation({ to: projectLink, reloadDocument: true })}
     >
       <img
