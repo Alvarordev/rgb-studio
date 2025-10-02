@@ -15,10 +15,10 @@ function RouteComponent() {
           <img
             src="/logos/Entrega_Marca Completa-RGB studio-Blanca SIN FONDO.png"
             alt="logo"
-            className="xl:h-[450px] h-[380px]"
+            className="2xl:h-[450px] h-[380px]"
           />
 
-          <div className="flex flex-col gap-4 xl:gap-8 text-card max-w-80">
+          <div className="flex flex-col gap-4 2xl:gap-8 text-card max-w-80">
             <div>
               <p className="text-xs font-semibold text-card/40">CORREO</p>
               <p className="pt-2 text-sm">INFO@RGBSTUDIO.COM</p>

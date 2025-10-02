@@ -34,9 +34,9 @@ export const MemberSlider = ({ team }: { team: Member[] }) => {
             <img
               src={team[active].imageUrl}
               alt={team[active].name}
-              className="xl:h-[65vh] h-[60vh] xl:min-w-[55vh] min-w-[50vh] object-cover"
+              className="2xl:h-[65vh] h-[60vh] 2xl:min-w-[55vh] min-w-[50vh] object-cover"
             />
-            <div className="flex flex-col items-start pl-16 xl:pl-32">
+            <div className="flex flex-col items-start pl-16 2xl:pl-32">
               <AnimatedTitle
                 title={team[active].name}
                 trigger={active}

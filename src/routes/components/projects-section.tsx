@@ -4,7 +4,7 @@ const ProjectSection = () => {
   return (
     <section
       id="projects"
-      className="flex flex-col items-center w-full min-h-screen py-16 xl:py-20 bg-foreground text-background"
+      className="flex flex-col items-center w-full min-h-screen py-16 2xl:py-20 bg-foreground text-background"
     >
       <div className="flex flex-col items-center pb-40 text-center">
         <div className="flex flex-col items-center">
@@ -14,7 +14,7 @@ const ProjectSection = () => {
           <div className="h-[2px] w-36 bg-[#315139] mt-3 saturate-200 "></div>
         </div>
       </div>
-      <div className="flex justify-center w-full mt-5 xl:mt-20">
+      <div className="flex justify-center w-full mt-5 2xl:mt-20">
         <Carousel />
       </div>
     </section>
