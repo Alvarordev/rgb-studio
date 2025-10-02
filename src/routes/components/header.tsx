@@ -18,9 +18,9 @@ function Header({ lightMode = false }: { lightMode?: boolean }) {
         <div className="flex items-center flex-1">
           <Link to="/">
             {lightMode ? (
-              <img src="/logos/logo-colores.png" alt="logo" className="w-24" />
+              <img src="/logos/logo-color-transparente.png" alt="logo" className="w-24" />
             ) : (
-              <img src="/logos/logo-colores.png" alt="logo" className="h-36" />
+              <img src="/logos/logo-color-transparente.png" alt="logo" className="h-10" />
             )}
           </Link>
         </div>

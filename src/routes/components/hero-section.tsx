@@ -25,11 +25,11 @@ const HeroSection = () => {
               classname="object-cover 2xl:w-[350px] w-[300px] 2xl:h-[460px] xl:h-[50vh]"
             />
 
-            <h1 className="items-start font-medium text-[5.2rem] font-oswald">
+            <h1 className="items-start font-medium text-[5.2rem] font-oswald 2xl:mt-6">
               <AnimatedTitle
                 title="RGB STUDIO"
                 trigger={1}
-                className="items-start font-medium 2xl:text-[5.2rem] text-72xl font-oswald"
+                className="items-start font-medium 2xl:text-8xl text-72xl font-oswald"
               />
             </h1>
 
