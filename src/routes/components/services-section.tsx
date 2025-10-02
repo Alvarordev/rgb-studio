@@ -38,13 +38,14 @@ export function ServicesSection() {
   return (
     <section id="servicios" className="w-full min-h-screen py-20 mx-auto bg-background max-w-7xl">
       <div className="container px-4 mx-auto sm:px-6 lg:px-8">
-        <div className="mb-16 text-center">
-          <p className="mb-4 text-sm font-medium tracking-wider uppercase text-foreground/50">Lo Que Hacemos</p>
-          <h2 className="mb-6 text-4xl font-bold md:text-5xl text-foreground">
+        <div className="flex flex-col items-center mb-16 text-center">
+          <p className="text-base font-medium tracking-wider uppercase  text-foreground font-oswald">Lo Que Hacemos</p>
+          <div className="h-[1px] w-28 bg-foreground mt-3 "></div>
+          {/* <h2 className="mb-6 text-4xl font-medium md:text-2xl text-foreground">
             Estamos Aquí Para Crear
             <br />
             <span>Tu Diseño Arquitectónico Ideal</span>
-          </h2>
+          </h2> */}
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

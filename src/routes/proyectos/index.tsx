@@ -13,9 +13,9 @@ function RouteComponent() {
     <div className="min-h-screen bg-neutral-400/40 font-montserrat">
       <Header />
 
-      <main className="w-full px-4 py-16 mx-auto mt-20 max-w-7xl">
+      <main className="w-full px-4 pb-16 mx-auto mt-20 max-w-7xl">
         <div className="mb-16 text-center">
-          <AnimatedTitle title="NUESTROS PROYECTOS" firstLineWords={1} secondLineWords={1} trigger={1} className="font-light text-8xl"/>
+          <AnimatedTitle title="NUESTROS PROYECTOS" firstLineWords={1} secondLineWords={1} trigger={1} className="font-medium text-8xl font-oswald"/>
           <div className="w-48 h-px mx-auto mt-4 bg-primary"></div>
         </div>
 
@@ -32,7 +32,7 @@ function RouteComponent() {
                   className={`space-y-6 ${index % 2 === 1 ? "md:order-2" : ""}`}
                 >
                   <div className="flex items-baseline space-x-6">
-                    <span className="font-light text-8xl md:text-9xl text-muted-foreground/30">
+                    <span className="font-normal text-8xl md:text-9xl text-muted-foreground/30">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <div>

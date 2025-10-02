@@ -8,7 +8,7 @@ const ProjectSection = () => {
     >
       <div className="flex flex-col items-center pb-40 text-center">
         <div className="flex flex-col items-center">
-          <p className="text-sm font-medium tracking-wider uppercase">
+          <p className="font-medium tracking-wider uppercase text-balance font-oswald">
             Nuestros Proyectos
           </p>
           <div className="h-[1px] w-36 bg-background mt-3 "></div>

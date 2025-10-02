@@ -7,7 +7,7 @@ function AboutSection() {
     <section className="flex flex-col w-full bg-background text-foreground">
       <div className="container grid w-full grid-cols-6 py-32 mx-auto px-15">
         <div className="flex flex-col items-center col-span-6 pb-20">
-          <p className="text-sm font-medium tracking-wider uppercase">
+          <p className="font-medium tracking-wider uppercase text-medium font-oswald">
             SOBRE NOSOTROS
           </p>
           <div className="h-[1px] w-28 bg-foreground mt-3 "></div>

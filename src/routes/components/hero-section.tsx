@@ -13,7 +13,7 @@ const HeroSection = () => {
               img="02/02-1.jpg"
               classname="object-cover w-64 h-44"
             />
-            <p className="text-sm font-light uppercase text-wrap text-card/70">
+            <p className="text-sm font-medium uppercase text-wrap text-card/70">
               Creamos espacios <br /> arquitectónicos únicos <br /> que combinan
               funcionalidad, <br /> estética y estilo.
             </p>
@@ -22,14 +22,14 @@ const HeroSection = () => {
           <div className="flex flex-col items-center flex-1 h-full col-span-4 gap-4 pt-12">
             <AnimatedImage
               img="04/04-1.png"
-              classname="object-cover w-[340px] h-[460px]"
+              classname="object-cover w-[350px] h-[460px]"
             />
 
             <h1>
               <AnimatedTitle
                 title="RGB STUDIO"
                 trigger={1}
-                className="items-start font-normal text-[5rem]"
+                className="items-start font-medium text-[5.2rem] font-oswald"
               />
             </h1>
 
@@ -47,7 +47,7 @@ const HeroSection = () => {
               img="03/03-1.jpeg"
               classname="object-cover w-64 h-44"
             />
-            <p className="text-sm uppercase text-end text-card/70">
+            <p className="text-sm font-medium uppercase text-end text-card/70">
               Lo que eres <br /> lo que vives <br /> lo que habitas.
             </p>
           </div>

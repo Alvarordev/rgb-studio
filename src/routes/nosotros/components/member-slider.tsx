@@ -43,7 +43,7 @@ export const MemberSlider = ({ team }: { team: Member[] }) => {
                 className="text-6xl font-medium uppercase text-start"
               />
 
-              <p className="mt-4 text-background/40">
+              <p className="mt-4 font-semibold text-background/40">
                 {team[active].position}
               </p>
               <p className="mt-10 text-sm leading-6 text-left">

@@ -42,37 +42,56 @@ function RouteComponent() {
         <AnimatedTitle
           title="NOSOTROS"
           trigger={1}
-          className="mt-20 font-light text-8xl"
+          className="mt-20 font-medium text-8xl font-oswald"
         />
 
-        <div className="flex justify-between w-full px-20 mt-32">
-          <img
-            src="/about/grupal.png"
+        <div className="flex flex-col items-center justify-between w-full px-20 mt-4">
+          {/* <img
+            src="/about/SSSSFSAF.jpg"
             alt="nosotros"
-            className="min-w-[65vh] h-[55vh] object-cover object-top"
+            className="max-w-7xl w-full h-[50vh] object-cover object-center"
           />
 
-          <div className="flex flex-col gap-4 w-[54vh] uppercase">
+          <div className="flex flex-col w-full max-w-3xl gap-4 mt-5 text-center uppercase">
             <p className="text-sm leading-8">
               RGB es un estudio de arquitectura y diseño que busca crear
               espacios únicos, funcionales y atemporales, adaptados a la visión
               y necesidades de cada cliente.
-              <br className="mb-5"/>
               Trabajamos cada proyecto de manera cercana y colaborativa,
               transformando ideas en lugares que inspiran y perduran en el
               tiempo.
             </p>
+          </div> */}
+
+          <p className="w-full max-w-4xl mb-20 text-base leading-8 text-center">
+              RGB es un estudio de arquitectura y diseño que busca crear
+              espacios únicos, funcionales y atemporales, adaptados a la visión
+              y necesidades de cada cliente.
+              Trabajamos cada proyecto de manera cercana y colaborativa,
+              transformando ideas en lugares que inspiran y perduran en el
+              tiempo.
+            </p>
+          <div className="container grid justify-between grid-cols-6 gap-20 px-20 mx-auto">
+          <div className="col-span-2 h-[50vh]">
+            <HoverSlideIn src="/about/boca.png" alt="boca" color="red" />
           </div>
+          <div className="col-span-2 h-[50vh]">
+            <HoverSlideIn src="/about/oidos.png" alt="boca" color="green" />
+          </div>
+          <div className="col-span-2 h-[50vh]">
+            <HoverSlideIn src="/about/ojos.png" alt="boca" color="blue" />
+          </div>
+        </div>
         </div>
       </section>
 
-      <section className="container flex justify-between py-32 mx-auto px-28 text-card">
-        <h2 className="text-[4rem] leading-16 uppercase">
+      <section className="container flex justify-between h-screen py-32 mx-auto px-28 text-card">
+        <h2 className="text-[4.8rem] leading-20 uppercase font-oswald">
           comprometidos <br /> en entregar <br /> excepcionales <br /> resultados
         </h2>
 
-        <div className="flex flex-col items-center w-full gap-20 pl-56">
-          <p className="text-sm leading-8 uppercase">
+        <div className="flex flex-col items-center w-full gap-20 pt-8 pl-72">
+          <p className="text-base leading-9 uppercase">
             Cada proyecto lo abordamos con la misma pasión y compromiso,
             cuidando los detalles y buscando siempre un equilibrio entre
             estética, funcionalidad y sostenibilidad. Nos inspira trabajar de
@@ -82,12 +101,12 @@ function RouteComponent() {
           <img
             src="/logos/logo-reducido-blanco.png"
             alt="logo reducido"
-            className="w-72"
+            className="w-64"
           />
         </div>
       </section>
 
-      <section className="w-full h-screen py-20 text-card">
+      {/* <section className="w-full h-screen py-20 text-card">
         <div className="flex flex-col items-center pb-20">
           <p className="text-sm font-medium tracking-wider uppercase">
             Nuestro Equipo
@@ -111,10 +130,10 @@ function RouteComponent() {
             <HoverSlideIn src="/about/ojos.png" alt="boca" color="blue" />
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="container w-full h-screen px-20 mx-auto bg-foreground text-card">
-        <h3 className="text-5xl">NUESTRO EQUIPO</h3>
+        <h3 className="text-5xl font-oswald text-medium">NUESTRO EQUIPO</h3>
 
         <div className="w-full bg-white h-[1px] my-15"></div>
 

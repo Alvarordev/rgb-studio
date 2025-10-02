@@ -12,6 +12,12 @@ module.exports = {
           'system-ui',
           'sans-serif',
         ],
+        oswald: [
+          'Oswald',
+          'ui-sans-serif',
+          'system-ui',
+          'sans-serif',
+        ]
       },
     },
   },
