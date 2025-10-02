@@ -10,7 +10,7 @@ function AboutSection() {
           <p className="font-medium tracking-wider uppercase text-medium font-oswald">
             SOBRE NOSOTROS
           </p>
-          <div className="h-[1px] w-28 bg-foreground mt-3 "></div>
+          <div className="h-[2px] w-28 bg-[#592B31] mt-3 1] saturate-200 "></div>
         </div>
 
         <div className="relative col-span-3 pl-20">

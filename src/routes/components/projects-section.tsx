@@ -11,7 +11,7 @@ const ProjectSection = () => {
           <p className="font-medium tracking-wider uppercase text-balance font-oswald">
             Nuestros Proyectos
           </p>
-          <div className="h-[1px] w-36 bg-background mt-3 "></div>
+          <div className="h-[2px] w-36 bg-[#315139] mt-3 saturate-200 "></div>
         </div>
       </div>
       <div className="flex justify-center w-full mt-20">
