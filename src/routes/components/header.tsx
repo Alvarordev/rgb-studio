@@ -7,24 +7,15 @@ function Header({ lightMode = false }: { lightMode?: boolean }) {
   return (
     <header
       className={`flex justify-center w-full pointer-events-none transition-all ${
-        lightMode ? "bg-background" : "bg-foreground"
+        lightMode ? "bg-[#F4F3F1]" : "bg-foreground"
       }`}
     >
       <div
         className={`container flex items-center w-full h-20 transition-all pointer-events-auto cotainer xl:px-15 ${
-          lightMode ? "bg-background" : "bg-foreground"
-        } text-card`}
+          lightMode ? "bg-[#F4F3F1] text-foreground" : "bg-foreground text-card"
+        }`}
       >
-        <div className="flex items-center flex-1">
-          <Link to="/">
-            {lightMode ? (
-              <img src="/logos/logo-color-transparente.png" alt="logo" className="w-24" />
-            ) : (
-              <img src="/logos/logo-color-transparente.png" alt="logo" className="h-10" />
-            )}
-          </Link>
-        </div>
-        <div className="flex items-center justify-center flex-none">
+        <div className="flex items-center justify-start flex-1">
           <ul
             className={`flex gap-6 text-xs font-medium font-montserrat ${
               lightMode ? "text-foreground" : "text-card"
@@ -32,7 +23,7 @@ function Header({ lightMode = false }: { lightMode?: boolean }) {
           >
             <li
               className={`transition-all duration-200 hover:text-card hover:scale-105 hover:saturate-150 ${
-                path === "/" ? "text-card underline underline-offset-8" : ""
+                path === "/" ? "text-primary underline underline-offset-8" : ""
               }`}
             >
               <Link to="/">HOME</Link>
@@ -55,25 +46,44 @@ function Header({ lightMode = false }: { lightMode?: boolean }) {
             >
               <Link to="/nosotros">NOSOTROS</Link>
             </li>
-            <li
-              className={`transition-all duration-200 hover:text-[#7BAA96] hover:scale-105 hover:saturate-150 ${
-                path === "/contacto"
-                  ? "text-[#7BAA96] underline underline-offset-8"
-                  : ""
-              }`}
-            >
-              <Link to="/contacto">CONTACTO</Link>
-            </li>
           </ul>
         </div>
+
+        <div className="flex items-center ">
+          <Link to="/">
+            {lightMode ? (
+              <img
+                src="/logos/logo-negro-icono.png"
+                alt="logo"
+                className="h-7"
+              />
+            ) : (
+              <img
+                src="/logos/logo-blanco-icono.png"
+                alt="logo"
+                className="h-7"
+              />
+            )}
+          </Link>
+        </div>
+
         <div className="flex items-center justify-end flex-1">
           <p
+            className={`transition-all duration-200 hover:text-[#7BAA96] hover:scale-105 hover:saturate-150 text-xs font-medium ${
+              path === "/contacto"
+                ? "text-[#7BAA96] underline underline-offset-8"
+                : ""
+            }`}
+          >
+            <Link to="/contacto">CONTACTO</Link>
+          </p>
+          {/* <p
             className={`text-xs font-medium text-end ${
               lightMode ? "text-foreground/60" : "text-card/40"
             }`}
           >
             ESTUDIO DE ARQUITECTURA <br /> & DISEÑO DE INTERIORES
-          </p>
+          </p> */}
         </div>
       </div>
     </header>

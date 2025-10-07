@@ -18,7 +18,7 @@ const team = [
     imageUrl: "/about/alv.webp",
   },
   {
-    name: "Katherine Diaz",
+    name: "Alessandra Diaz",
     position: "Arquitecta & Socia-Fundador",
     description:
       "Tras obtener su título de Arquitectura por la Universidad Peruana de Ciencias Aplicadas (UPC), Katherine se unió a un prestigioso estudio de diseño de lujo. Ascendió a diseñadora principal, liderando proyectos reconocidos con importantes galardones de diseño global. Katherine aporta una experiencia vasta, enfocada en la estética y el conocimiento técnico profundo en el diseño de interiores premium residencial y comercial.",

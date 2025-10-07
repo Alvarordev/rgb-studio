@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 
 function AboutSection() {
   return (
-    <section className="flex flex-col w-full bg-background text-foreground">
+    <section className="flex flex-col w-full border-t bg-background text-foreground">
       <div className="container grid w-full grid-cols-6 mx-auto py-28 xl:py-32 xl:px-15">
         <div className="flex flex-col items-center col-span-6 pb-20">
           <p className="font-medium tracking-wider uppercase text-medium font-oswald">
@@ -46,7 +46,7 @@ function AboutSection() {
               Trabajamos con pasión y dedicación, creando propuestas únicas que buscan inspirar, conectar y trascender en el tiempo.
             </p>
             <AnimatedImage
-              img="/about/grupal.webp"
+              img="/02/02-8.jpg"
               classname="xl:mt-40 mt-32 xl:h-[70vh] h-[65vh] object-cover w-full"
             />
 

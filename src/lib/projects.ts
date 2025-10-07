@@ -4,13 +4,13 @@ export const projects = [
     title: "Baño Sevilla",
     slug: "baño-sevilla",
     imgs: [
-      "/01/01-1.jpg",
+      "/01/01-1.jpeg",
       "/01/01-2.jpg",
       "/01/01-3.jpg",
       "/01/01-4.jpg",
       "/01/01-5.jpg",
-      "/01/01-6.jpg",
-      "/01/01-7.jpg",
+      "/01/01-6.jpeg",
+      "/01/01-7.jpeg",
     ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -22,8 +22,8 @@ export const projects = [
   },
   {
     id: 1,
-    title: "Casa Trujillo",
-    slug: "casa-trujillo",
+    title: "Cocina Elba",
+    slug: "cocina-elba",
     imgs: [
       "/02/02-1.jpg",
       "/02/02-2.png",
@@ -42,11 +42,11 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Terraza",
-    slug: "terraza",
+    title: "Terraza Atenas",
+    slug: "terraza-atenas",
     imgs: [
-      "/03/03-1.jpeg",
-      "/03/03-2.png",
+      "/03/03-1.png",
+      "/03/03-2.jpeg",
       "/03/03-3.png",
       "/03/03-4.png",
       "/03/03-5.png",

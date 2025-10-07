@@ -1,70 +1,70 @@
 @font-face {
-  font-family: 'Montserrat';
-  src: url('/font/Montserrat-Regular.ttf') format('truetype');
+  font-family: "Montserrat";
+  src: url("/font/Montserrat-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Montserrat';
-  src: url('/font/Montserrat-Medium.ttf') format('truetype');
+  font-family: "Montserrat";
+  src: url("/font/Montserrat-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Montserrat';
-  src: url('/font/Montserrat-SemiBold.ttf') format('truetype');
+  font-family: "Montserrat";
+  src: url("/font/Montserrat-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Montserrat';
-  src: url('/font/Montserrat-Bold.ttf') format('truetype');
+  font-family: "Montserrat";
+  src: url("/font/Montserrat-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Montserrat';
-  src: url('/font/Montserrat-Light.ttf') format('truetype');
+  font-family: "Montserrat";
+  src: url("/font/Montserrat-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Oswald';
-  src: url('/font/Oswald-Regular.ttf') format('truetype');
+  font-family: "Oswald";
+  src: url("/font/Oswald-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Oswald';
-  src: url('/font/Oswald-Medium.ttf') format('truetype');
+  font-family: "Oswald";
+  src: url("/font/Oswald-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Oswald';
-  src: url('/font/Oswald-SemiBold.ttf') format('truetype');
+  font-family: "Oswald";
+  src: url("/font/Oswald-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Oswald';
-  src: url('/font/Oswald-Bold.ttf') format('truetype');
+  font-family: "Oswald";
+  src: url("/font/Oswald-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Oswald';
-  src: url('/font/Oswald-Light.ttf') format('truetype');
+  font-family: "Oswald";
+  src: url("/font/Oswald-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -121,10 +121,12 @@
   --card-foreground: oklch(0.1957 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.4326 0.0526 230.12);
+  --primary: oklch(0.4291 0.0526 230.17);
   --primary-foreground: oklch(0.7622 0.0442 227.41);
-  --secondary: oklch(0.968 0.007 247.896);
+  --secondary: oklch(0.4026 0.0554 151.22);
   --secondary-foreground: oklch(0.208 0.042 265.755);
+  --tertiary: oklch(0.3525 0.0677 12.93);
+  --tertiary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
   --muted-foreground: oklch(0.554 0.046 257.417);
   --accent: oklch(0.968 0.007 247.896);
@@ -191,11 +193,15 @@
   }
 }
 .font-montserrat {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .font-oswald {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
+}
+
+.font-raleway {
+  font-family: "Raleway", sans-serif;
 }
 
 body {
